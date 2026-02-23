@@ -185,21 +185,24 @@ void loadFromFile() {
     ifstream file("students.json");
     if (!file.is_open()) return;
 
-    string line, name;
-    int roll;
-    float marks;
-    char nameBuffer[256];
+    records.clear();
+    string line;
 
     while (getline(file, line)) {
         if (line.find("\"roll\"") != string::npos) {
-            sscanf(line.c_str(), "%*[^:]:%d", &roll);
-            getline(file, line);
-            sscanf(line.c_str(), "%*[^\"]:\"%255[^\"]", nameBuffer);
-            name = nameBuffer;
-            getline(file, line);
-            sscanf(line.c_str(), "%*[^:]:%f", &marks);
-            
-            records[roll] = {roll, name, marks};
+            Student s;
+            char nameBuffer[256];
+
+            sscanf(
+                line.c_str(),
+                " {\"roll\": %d , \"name\": \"%255[^\"]\" , \"marks\": %f}",
+                &s.roll,
+                nameBuffer,
+                &s.marks
+            );
+
+            s.name = nameBuffer;
+            records[s.roll] = s;
         }
     }
     file.close();
@@ -217,6 +220,7 @@ void undo() {
 
 int main() {
     loadFromFile();
+    while (!undoStack.empty()) undoStack.pop();
     int choice;
     do {
         cout << "\n---- Student Record System ----\n";
