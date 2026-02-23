@@ -30,7 +30,7 @@
 │   ✦  Track Attendance & Performance             │
 │   ✦  Grade Management & GPA Calculation         │
 │   ✦  Search & Filter Students Instantly         │
-│   ✦  Clean Qt GUI Interface                    │
+│   ✦  Clean Qt GUI Interface                     │
 │                                                 │
 └─────────────────────────────────────────────────┘
 ```
