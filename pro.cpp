@@ -218,42 +218,42 @@ void undo() {
     cout << "Undo done\n";
 }
 
-int main() {
-    loadFromFile();
-    while (!undoStack.empty()) undoStack.pop();
-    int choice;
-    do {
-        cout << "\n---- Student Record System ----\n";
-        cout << "1. Add student\n";
-        cout << "2. Update student\n";
-        cout << "3. Delete student\n";
-        cout << "4. Search student\n";
-        cout << "5. Sort records\n";
-        cout << "6. Show stats\n";
-        cout << "7. Undo last change\n";
-        cout << "8. Save and Exit\n";
-        cout << "0. Exit\n";
-        cout << "Choice: ";
+// int main() {
+//     loadFromFile();
+//     while (!undoStack.empty()) undoStack.pop();
+//     int choice;
+//     do {
+//         cout << "\n---- Student Record System ----\n";
+//         cout << "1. Add student\n";
+//         cout << "2. Update student\n";
+//         cout << "3. Delete student\n";
+//         cout << "4. Search student\n";
+//         cout << "5. Sort records\n";
+//         cout << "6. Show stats\n";
+//         cout << "7. Undo last change\n";
+//         cout << "8. Save and Exit\n";
+//         cout << "0. Exit\n";
+//         cout << "Choice: ";
 
-        if (!(cin >> choice)) {
-            cin.clear();
-            cin.ignore(1000, '\n');
-            continue;
-        }
+//         if (!(cin >> choice)) {
+//             cin.clear();
+//             cin.ignore(1000, '\n');
+//             continue;
+//         }
 
-        switch (choice) {
-            case 1: addStudent(); break;
-            case 2: updateStudent(); break;
-            case 3: deleteStudent(); break;
-            case 4: searchStudent(); break;
-            case 5: sortRecords(); break;
-            case 6: showStats(); break;
-            case 7: undo(); break;
-            case 8: saveToFile(); cout << "Exiting...\n"; break;
-            case 0: cout << "Exiting without saving...\n"; break;
-            default: cout << "Invalid choice\n";
-        }
-    } while (choice != 0 && choice != 8);
+//         switch (choice) {
+//             case 1: addStudent(); break;
+//             case 2: updateStudent(); break;
+//             case 3: deleteStudent(); break;
+//             case 4: searchStudent(); break;
+//             case 5: sortRecords(); break;
+//             case 6: showStats(); break;
+//             case 7: undo(); break;
+//             case 8: saveToFile(); cout << "Exiting...\n"; break;
+//             case 0: cout << "Exiting without saving...\n"; break;
+//             default: cout << "Invalid choice\n";
+//         }
+//     } while (choice != 0 && choice != 8);
 
-    return 0;
-}
+//     return 0;
+// }

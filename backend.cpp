@@ -1,8 +1,6 @@
-// backend.cpp
 #include "backend.h"
 
-// include your existing logic file
-#include "pro.cpp"
+// REMOVED: #include "pro.cpp" 
 
 void addStudentUI(int roll, const std::string& name, float marks) {
     Student s;

@@ -1,10 +1,10 @@
-// ui_main.cpp
 #include <QApplication>
 #include <QWidget>
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QInputDialog>
 #include <QMessageBox>
+#include <QLineEdit>
 
 #include "backend.h"
 
