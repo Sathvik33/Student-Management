@@ -1,20 +1,15 @@
 #pragma once
 #include <string>
-#include <map>
 
-// 1. Move the Student struct here so both backend and pro can use it
-struct Student {
-    int roll;
-    std::string name;
-    float marks;
-};
-
-// 2. Declare the records map as extern so backend.cpp can access it
-extern std::map<int, Student> records;
-
+// lifecycle
 void loadFromFile();
 void saveToFile();
 
-// backend operations
+// CRUD used by UI
 void addStudentUI(int roll, const std::string& name, float marks);
+bool updateStudentUI(int roll, const std::string& name, float marks);
+bool deleteStudentUI(int roll);
 std::string searchStudentUI(int roll);
+
+// stats
+std::string statsUI();

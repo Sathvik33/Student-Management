@@ -11,7 +11,6 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets)
 add_executable(StudentUI
     ui_main.cpp
     backend.cpp
-    pro.cpp
 )
 
 target_link_libraries(StudentUI Qt6::Widgets)
